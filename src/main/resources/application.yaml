@@ -5,8 +5,12 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: xxxxxx
-    
+    password: xxxxxx 
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: 129496
 mybatis:
   mapper-locations: classpath*:/mapper/*.xml
 

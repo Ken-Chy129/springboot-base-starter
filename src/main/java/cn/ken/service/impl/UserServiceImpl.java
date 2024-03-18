@@ -6,6 +6,7 @@ import cn.ken.domain.vo.UserVO;
 import cn.ken.mapper.UserMapper;
 import cn.ken.service.UserService;
 import jakarta.annotation.Resource;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
@@ -23,6 +24,9 @@ public class UserServiceImpl implements UserService {
     
     @Resource
     private UserMapper userMapper;
+
+    @Resource
+    private RedisTemplate<String, Object> redisTemplate;
     
     @Override
     public Result<UserVO> login(String username, String password) {
@@ -33,6 +37,7 @@ public class UserServiceImpl implements UserService {
         UserVO userVO = new UserVO();
         userVO.setUsername(username);
         userVO.setPassword(password);
+        redisTemplate.opsForValue().set("hhhh", userVO);
         return Result.success(userVO);
     }
 }
