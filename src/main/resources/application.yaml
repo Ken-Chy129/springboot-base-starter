@@ -5,6 +5,13 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai
     username: root
-    password: 129496
+    password: xxxxxx
+    
 mybatis:
   mapper-locations: classpath*:/mapper/*.xml
+
+# 详见：https://doc.xiaominfo.com/，访问地址：http://ip:port/doc.html
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
